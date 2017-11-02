@@ -16,11 +16,11 @@ public class Human {
     public static void main(String[] args) {   
     }    
     private int age;
-    private char name;
+    private String name;
     public void  setAge(int a){
     age=a;
     }
-    public void setName(char n){
+    public void setName(String n){
         name=n; 
     }
     public Human(){
@@ -28,5 +28,7 @@ public class Human {
     name="inget";        
     }
 }
+
+Hejsan..
 }
 
