@@ -9,13 +9,24 @@ package labb1;
  *
  * @author marsta
  */
-public class Human {
-
+public class Human {   
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) {   
+    }    
+    private int age;
+    private char name;
+    public void  setAge(int a){
+    age=a;
     }
-    
+    public void setName(char n){
+        name=n; 
+    }
+    public Human(){
+    age=0;
+    name="inget";        
+    }
 }
+}
+
