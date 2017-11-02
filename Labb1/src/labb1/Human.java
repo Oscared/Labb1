@@ -9,7 +9,7 @@ package labb1;
  *
  * @author marsta
  */
-public class Labb1 {
+public class Human {
 
     /**
      * @param args the command line arguments
