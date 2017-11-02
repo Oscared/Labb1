@@ -13,7 +13,9 @@ public class Human {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {   
+    public static void main(String[] args) {  
+        Human newHuman=new Human(22,"Oscar");
+        newHuman.toString();
     }    
     private int age;
     private String name;
@@ -23,12 +25,14 @@ public class Human {
     public void setName(String n){
         name=n; 
     }
-    public Human(){
-    age=0;
-    name="inget";        
+    public Human(int ageln, String nameln){
+    age=ageln;
+    name=nameln;        
+    }
+    public String toString(){
+     System.out.println("namn:" + name + ", ålder:" + age + " år.");
+    
     }
 }
 
-Hejsan..
-}
 
