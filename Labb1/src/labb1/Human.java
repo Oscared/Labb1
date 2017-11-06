@@ -15,7 +15,10 @@ public class Human {
      */
     public static void main(String[] args) {  
         Human newHuman=new Human(22,"Oscar");
-        newHuman.toString();
+        System.out.println(newHuman.toString());
+        System.out.println(newHuman.getAge());
+        System.out.println(newHuman.getName());
+        System.out.println(newHuman);
     }    
     private int age;
     private String name;
@@ -30,8 +33,16 @@ public class Human {
     name=nameln;        
     }
     public String toString(){
-     System.out.println("namn:" + name + ", ålder:" + age + " år.");
+     return "namn: " + name + ", ålder: " + age + " år.";
     
+    }
+    
+    public String getName(){
+        return name;
+    }
+    
+    public int getAge(){
+        return age;
     }
 }
 
