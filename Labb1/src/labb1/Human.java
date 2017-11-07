@@ -20,11 +20,12 @@ public class Human {
         
         /*System.out.println(newhuman.toString());
         System.out.println(newhuman.getName());
-        System.out.println(newhuman.getAge());
-        Human fysiker=new Human();
-        System.out.println(fysiker);*/
+        System.out.println(newhuman.getAge()) */
         newhuman.setFysikerName();
         System.out.println(fysikerName[1]);
+        Human fysiker=new Human();
+        System.out.println(fysiker);
+        
     }    
     private int age;
     private String name; 
@@ -58,12 +59,20 @@ public class Human {
     age=ageln;
     name=nameln;        
     }
-
-    public Human(){
+    public static int randomnumber(){
         int randAge=(int)(Math.random()*100);
+        return randAge;
+    }    
+    public static String randomname(){
         String randName=fysikerName[(int)(Math.random()*15)];
-        /* Human(randAge, randName); */
+        return randName;
+        
     }
+    public Human(){
+        this(randomnumber(),randomname());
+    }
+          
+   
     public String toString(){
      return "namn: " + name + ", ålder: " + age + " år.";
     
@@ -76,5 +85,7 @@ public class Human {
     public int getAge(){
         return age;
     }
+
+   
     
 }
