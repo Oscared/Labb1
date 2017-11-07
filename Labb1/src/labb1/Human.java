@@ -13,28 +13,29 @@ public class Human {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {  
-        Human newHuman=new Human(22,"Oscar");
-        System.out.println(newHuman.toString());
-        System.out.println(newHuman.getAge());
-        System.out.println(newHuman.getName());
-        System.out.println(newHuman);
+    
+    public static void main(String[] args) {
+        Human newhuman;
+        newhuman = new Human(22,"Martin");
+        
+        /*System.out.println(newhuman.toString());
+        System.out.println(newhuman.getName());
+        System.out.println(newhuman.getAge());
         Human fysiker=new Human();
-        System.out.println(fysiker);
+        System.out.println(fysiker);*/
+        newhuman.setFysikerName();
+        System.out.println(fysikerName[1]);
     }    
     private int age;
     private String name; 
-    private String[] fysikerName;
+    private static String[] fysikerName;
     
-    public void  setAge(int a){
-    age=a;
-    }
-    public void setName(String n){
-        name=n; 
-    }
+    private String[] fysiker;
     
-    public void setFysikerName(){
-        String[] fysikerName;
+    
+    
+    public static void setFysikerName(){
+   
         fysikerName=new String[15];
         fysikerName[0]="Oscar";
         fysikerName[1]="Martin";
@@ -57,7 +58,7 @@ public class Human {
     age=ageln;
     name=nameln;        
     }
-    
+
     public Human(){
         int randAge=(int)(Math.random()*100);
         String randName=fysikerName[(int)(Math.random()*15)];
@@ -75,7 +76,5 @@ public class Human {
     public int getAge(){
         return age;
     }
-
+    
 }
-
-
