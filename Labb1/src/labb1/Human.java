@@ -68,7 +68,7 @@ public class Human {
         return randName;
         
     }
-    public Human(){
+    public Human(){ /* Lite extern hjälp kring this */
         this(randomnumber(),randomname());
     }
           
