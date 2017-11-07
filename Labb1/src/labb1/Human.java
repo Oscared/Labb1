@@ -61,7 +61,7 @@ public class Human {
     public Human(){
         int randAge=(int)(Math.random()*100);
         String randName=fysikerName[(int)(Math.random()*15)];
-        Human(randAge, randName);
+        /* Human(randAge, randName); */
     }
     public String toString(){
      return "namn: " + name + ", ålder: " + age + " år.";
