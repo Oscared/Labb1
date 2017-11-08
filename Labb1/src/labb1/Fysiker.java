@@ -5,6 +5,7 @@
  */
 package labb1;
 
+import java.util.Arrays;
 /**
  *
  * @author oscar
@@ -44,6 +45,22 @@ public class Fysiker extends Human{
                 System.out.println(randPepsArr[i].toString());
             }
         }
+        
+        System.out.println("Del 4 klar!");
+        
+        Arrays.sort(randPepsArr);
+        for(int j=0;j<10; j++){
+            System.out.println(randPepsArr[j]);
+        }
+        System.out.println("Del 5 klar!");
+        
+        Fysiker[] fysikerArr;
+        fysikerArr=new Fysiker[2];
+        fysikerArr[0]=new Fysiker(22, "Oscar", 2015);
+        fysikerArr[1]=new Fysiker(22,"Martin", 2014);
+        Arrays.sort(fysikerArr);
+        System.out.println(fysikerArr[0]);
+        System.out.println(fysikerArr[1]);
     }
     
     private static int checkAge(int ageln, int yearln) throws Exception{
@@ -84,13 +101,42 @@ public class Fysiker extends Human{
         year=getRandYear(getAge());
     }
     
+    
     public String toString(){
         
         String humanString=super.toString();
-        return humanString + " Började Fysik " + year + ".";
+        int length= String.valueOf(year % 100).length();
+        if (length<2){
+            return humanString + " Började Fysik " + year + ", är F0" + (year % 100);
+        }
+        else{
+            return humanString + " Började Fysik " + year + ", är F" + (year % 100);
+        }
     }
     
     public int getYear(){
         return year;
     }
-}
+    
+    public int compareTo(Fysiker o){
+        
+    if(getAge()<o.getAge()){
+        return -1;
+    } else if(getAge()>o.getAge()){
+        return 1;
+    }
+    else{
+        if(getYear()<o.getYear()){
+            return -1;
+            }else if(getYear()>o.getYear()){
+             return 1;   
+            }else{
+                return 0;
+            }
+        
+        }
+            
+        }
+    }
+    
+

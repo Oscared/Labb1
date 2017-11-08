@@ -15,7 +15,6 @@ public class randHuman {
      */
     
     public static void main(String[] args) {
-        setFysikerName();
         randHuman[] randArray; 
         randArray=new randHuman[15];
         
@@ -28,31 +27,8 @@ public class randHuman {
     
     private int age;
     private String name; 
-    private static String[] fysikerName;
-   
-    
-    
-    
-    private static void setFysikerName(){
-        
-        fysikerName=new String[15];
-        fysikerName[0]="Oscar";
-        fysikerName[1]="Martin";
-        fysikerName[2]="André";
-        fysikerName[3]="Emil";
-        fysikerName[4]="Anders";
-        fysikerName[5]="Klas";
-        fysikerName[6]="Thomas";
-        fysikerName[7]="Max";
-        fysikerName[8]="Ebba";
-        fysikerName[9]="Anton";
-        fysikerName[10]="Linn";
-        fysikerName[11]="Tobbe";
-        fysikerName[12]="Leo";
-        fysikerName[13]="Marcus";
-        fysikerName[14]="Ullis";
-    }
-    
+    private static String[] fysikerName={"Oscar", "Martin", "André", "Emil", "Anders", "Klas", "Thomas", "Max", "Ebba", "Anton", "Linn", "Tobbe", "Leo", "Marcus", "Ullis"};
+      
     public randHuman(int ageln, String nameln){
     age=ageln;
     name=nameln;        
