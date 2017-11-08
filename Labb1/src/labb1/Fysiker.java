@@ -17,28 +17,28 @@ public class Fysiker extends Human{
         
     }
     
-    private static int checkAge(int ageln, int yearln) throws Exception{
+    private static void checkAge(int ageln, int yearln) throws Exception{
         if (2017-ageln+15<=yearln){
             throw new Exception();
-        }
-        else{
-            return ageln;
         }
     }
     
     public Fysiker(int ageln, String nameln, int yearln) {
         super(ageln, nameln);
         
+        checkAge(ageln, yearln){
         try{
-            
+            System.out.println("Ålder funkar!");
         }catch (Exception e){
-            
+            System.err.println("Caught: " + e.getMessage() + ". Ålder funkar inte!");
+            }
         }
+        
         if (yearln<1932){
-            year=0000;
+            System.out.println("Ej giltigt år.");
         }
         else if (yearln>2015){
-            year=0000; //fixa så den retunrerar ett fel
+            System.out.println("Ej giltigt år.");
         }
         else{
             year=yearln;
@@ -46,7 +46,7 @@ public class Fysiker extends Human{
     }
     
     private static int getRandYear(int age){
-        int randYear=2017-age+15+(int)(Math.random()*84);
+        int randYear=2017-age+15+(int)(Math.random()*(age-15));
         return randYear;
     }
     
@@ -56,8 +56,8 @@ public class Fysiker extends Human{
     }
     
     public String toString(){
+        
         String humanString=super.toString();
-        String fYear=String.format("%tC", sYear); 
         return humanString + " började Fysik " + year + ".";
     }
     
