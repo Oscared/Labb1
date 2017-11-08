@@ -9,7 +9,7 @@ package labb1;
  *
  * @author marsta
  */
-public class Human implements Comparable{   
+public class Human implements Comparable<Human>{   
     /**
      * @param args the command line arguments
      */
@@ -30,10 +30,21 @@ public class Human implements Comparable{
         
         Human human1;
         human1=new Human();
+        
         Human human2;
         human2=new Human();
         
-        
+        if(human1.compareTo(human2)<0){
+            System.out.println(human2.getName() + ", som är " + human2.getAge() + " år, är äldre än "
+                    + human1.getName() + " som är " + human1.getAge() + " år.");
+        }
+        else if(human1.compareTo(human2)>0){
+            System.out.println(human1.getName() + ", som är " + human1.getAge() + " år, är äldre än "
+                    + human2.getName() + " som är " + human2.getAge() + " år.");
+        }
+        else{
+            System.out.print("De är lika gamla.");
+        }
     }    
     
     private int age;
@@ -89,7 +100,7 @@ public class Human implements Comparable{
         return age;
     }
 
-    public int compareTo(Object o){
+    public int compareTo(Human o){
         
     if(age<o.getAge()){
         return -1;
@@ -98,9 +109,8 @@ public class Human implements Comparable{
     }
     else{
         return 0;
+        }
     }
-    }
-    
 }
     
 
