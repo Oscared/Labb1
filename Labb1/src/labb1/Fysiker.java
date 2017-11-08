@@ -14,35 +14,63 @@ public class Fysiker extends Human{
     private int year;
     
     public static void main(String[] args){
+        Fysiker nyFysiker=new Fysiker(22, "Oscar", 2015);
+        System.out.println(nyFysiker.toString());
+        Fysiker randFysiker=new Fysiker();
+        System.out.println(randFysiker.toString());
+        System.out.println(randFysiker.getYear());
         
+        
+        Fysiker[] randFysikerArr; 
+        randFysikerArr=new Fysiker[10];
+        
+        for(int i=0; i<10; i++){
+            randFysikerArr[i]=new Fysiker();
+        
+            System.out.println(randFysikerArr[i].toString());
+        }
+        
+        Human[] randPepsArr;
+        randPepsArr=new Human[10];
+        
+        for(int i=0; i<10; i++){
+            if(i<5){
+                randPepsArr[i]=new Human();
+                System.out.println(randPepsArr[i].toString());
+                
+            }
+            else{
+                randPepsArr[i]=new Fysiker();
+                System.out.println(randPepsArr[i].toString());
+            }
+        }
     }
     
-    private static void checkAge(int ageln, int yearln) throws Exception{
-        if (2017-ageln+15<=yearln){
+    private static int checkAge(int ageln, int yearln) throws Exception{
+        if (2017-ageln+15>=yearln){
             throw new Exception();
         }
+        else if (yearln<1932 || yearln>2015){
+            throw new Exception();
+        }
+        else{
+            return yearln;
+        }
+        
     }
     
     public Fysiker(int ageln, String nameln, int yearln) {
         super(ageln, nameln);
         
-        checkAge(ageln, yearln){
         try{
-            System.out.println("Ålder funkar!");
+            year=checkAge(ageln, yearln);
+            System.out.println("Årtal och ålder fungerar!");
         }catch (Exception e){
             System.err.println("Caught: " + e.getMessage() + ". Ålder funkar inte!");
             }
-        }
         
-        if (yearln<1932){
-            System.out.println("Ej giltigt år.");
-        }
-        else if (yearln>2015){
-            System.out.println("Ej giltigt år.");
-        }
-        else{
-            year=yearln;
-        }
+        
+        
     }
     
     private static int getRandYear(int age){
@@ -52,13 +80,17 @@ public class Fysiker extends Human{
     
     public Fysiker(){
         super();
+        
         year=getRandYear(getAge());
     }
     
     public String toString(){
         
         String humanString=super.toString();
-        return humanString + " började Fysik " + year + ".";
+        return humanString + " Började Fysik " + year + ".";
     }
     
+    public int getYear(){
+        return year;
+    }
 }
